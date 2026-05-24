@@ -30,7 +30,7 @@ exports.registerUser = async (req,res) =>{
    });
 
    req.flash("success", "user registered successfully");
-   res.redirect("/login");
+   res.redirect("/dashboard");
 
   }catch(err){
     console.log(err);
@@ -65,7 +65,7 @@ exports.loginUsers = async (req,res) =>{
     }
 
     req.flash("success", "user login successfully");
-    res.redirect("/");
+    res.redirect("/dashboard");
 
   }catch(err){
     console.log(err);
