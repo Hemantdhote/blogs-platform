@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Post</title>
+</head>
+<body>
+
+<h1>Create Blog Post</h1>
+
+<form action="/posts/create" method="POST">
+
+  <input
+    type="text"
+    name="title"
+    placeholder="Enter title"
+  />
+
+  <br><br>
+
+  <textarea
+    name="content"
+    placeholder="Enter content"
+  ></textarea>
+
+  <br><br>
+
+  <input
+    type="text"
+    name="category"
+    placeholder="Enter category"
+  />
+
+  <br><br>
+
+  <button type="submit">
+    Create Post
+  </button>
+
+</form>
+
+</body>
+</html>

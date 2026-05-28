@@ -31,8 +31,10 @@ app.use((req, res, next) => {
 });
 
 const authRoutes = require("./routes/authRoutes")
+const postRoutes = require("./routes/postRoutes");
 
 app.use("/", authRoutes);
+app.use("/", postRoutes)
 
 app.get("/", (req, res) => {
   res.render("home");

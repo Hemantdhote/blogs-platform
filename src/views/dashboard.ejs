@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+
+<h1>Dashboard</h1>
+
+<a href="/posts/create">
+  Create New Blog
+</a>
+
+<hr>
+
+<h2>Your Posts</h2>
+
+<% if(posts.length === 0){ %>
+
+  <p>No posts created yet</p>
+
+<% } %>
+
+<% posts.forEach(post => { %>
+
+  <div>
+
+    <h3>
+      <%= post.title %>
+    </h3>
+
+    <p>
+      <%= post.content.substring(0, 100) %>
+    </p>
+
+    <a href="/posts/<%= post._id %>">
+      View
+    </a>
+
+    <a href="/posts/edit/<%= post._id %>">
+      Edit
+    </a>
+
+    <a href="/posts/delete/<%= post._id %>">
+      Delete
+    </a>
+
+  </div>
+
+  <hr>
+
+<% }) %>
+
+</body>
+</html>

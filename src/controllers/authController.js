@@ -29,6 +29,19 @@ exports.registerUser = async (req,res) =>{
     password:hashedPassword
    });
 
+   req.session.user = {
+  id: user._id,
+  name: user.name,
+  email: user.email
+};
+
+console.log( "userr", user._id);
+console.log("session", req.session.user);
+
+console.log(user);
+
+
+
    req.flash("success", "user registered successfully");
    res.redirect("/dashboard");
 
@@ -38,6 +51,7 @@ exports.registerUser = async (req,res) =>{
     res.redirect("/register")
   }
 }
+
 
 
 
@@ -59,10 +73,13 @@ exports.loginUsers = async (req,res) =>{
     }
 
     req.session.user = {
-      id: user.id,
+      id: user._id,
       name: user.name,
       email: user.email
     }
+
+    console.log( "userr", user._id);
+console.log("session", req.session.user);
 
     req.flash("success", "user login successfully");
     res.redirect("/dashboard");
